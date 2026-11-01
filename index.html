@@ -3,18 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HopeHands Foundation empowers vulnerable communities across South Africa with food, clothing, education and skills development.">
+  <meta name="description" content="Learn about HopeHands Foundation’s community support project in South Africa, including food parcels, clothing, education and skills development.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="HopeHands Foundation | Dignity in Action">
+  <meta property="og:description" content="Learn about HopeHands Foundation’s community support project in South Africa.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
   <title>HopeHands Foundation | Dignity in Action</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <!-- Site header and primary navigation -->
   <header class="site-header">
     <div>
-      <a class="brand" href="#home">
+      <a class="brand" href="index.html">
         <span>HopeHands</span> Foundation
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#home" aria-current="page">Home</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-toggle-label">Menu</span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="enquiry.html">Enquiry</a>
@@ -23,21 +35,32 @@
     </div>
   </header>
 
-  <main>
+  <!-- Main page content -->
+  <main id="main-content">
     <section id="home" class="hero">
       <div class="hero-inner">
         <p class="eyebrow">A South African charity project</p>
         <h1>Helping people in our communities</h1>
-        <img class="hero-image" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80" alt="Children smiling together outdoors">
+        <button class="gallery-trigger" type="button" aria-label="View a larger image: children smiling together outdoors">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Children smiling together outdoors" fetchpriority="high" decoding="async">
+        </button>
+        <p class="hero-actions">
+          <a class="button-link" href="services.html">Explore our services</a>
+          <a class="text-link" href="enquiry.html">Make an enquiry</a>
+        </p>
       </div>
     </section>
-
   </main>
 
-        <footer class="site-footer">
-          <div>
-      <span>© 2026 HopeHands Foundation. Registered in South Africa.</span>
+  <!-- Copyright and organization details -->
+  <footer class="site-footer">
+    <div>
+      <span>© 2026 HopeHands Foundation | Coursework project</span>
     </div>
   </footer>
+  <dialog class="image-dialog" aria-label="Expanded image">
+    <button class="dialog-close" type="button">Close image</button>
+    <img class="dialog-image" alt="">
+  </dialog>
 </body>
 </html>

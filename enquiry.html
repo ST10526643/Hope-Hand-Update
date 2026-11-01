@@ -3,23 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prepare an enquiry for the HopeHands Foundation project about community services, donations or volunteering.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Make an Enquiry | HopeHands Foundation">
+  <meta property="og:description" content="Prepare an enquiry about HopeHands Foundation services, donations or volunteering.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Enquiry | HopeHands Foundation</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><span>HopeHands</span> Foundation</a>
-    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="enquiry.html" aria-current="page">Enquiry</a><a href="contact.html">Contact</a></nav>
+    <div>
+      <a class="brand" href="index.html"><span>HopeHands</span> Foundation</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-toggle-label">Menu</span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="enquiry.html" aria-current="page">Enquiry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
-  <main class="page-content narrow-content">
-    <h1>Enquiry</h1><p>Use this form if you would like to sponsor one of our projects or donate goods.</p>
-    <form class="enquiry-form" action="#" method="post">
-      <label for="name">Name</label><input id="name" name="Name" type="text" required>
-      <label for="type">I am interested in</label><select id="type" name="Interest"><option>Sponsoring</option><option>Donating goods</option></select>
-      <label for="message">Message</label><textarea id="message" name="Message" rows="5" required></textarea>
-      <button type="submit">Send enquiry</button>
+  <main class="page-content narrow-content" id="main-content">
+    <h1>Enquiry</h1>
+    <p>Use this form to ask about the services listed on our website, donating goods, or volunteering.</p>
+    <p class="form-notice">This project has no configured message service. Your details stay in this browser and are not sent by this form.</p>
+    <form class="message-form" data-message-form data-form-name="HopeHands enquiry" novalidate>
+      <fieldset class="form-fields" data-form-fields disabled>
+        <legend>Enquiry details</legend>
+        <div class="field-group">
+          <label for="enquiry-name">Name <span aria-hidden="true">*</span></label>
+          <input id="enquiry-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" required aria-describedby="enquiry-name-error">
+          <small class="field-error" id="enquiry-name-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="enquiry-email">Email address <span aria-hidden="true">*</span></label>
+          <input id="enquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="enquiry-email-error">
+          <small class="field-error" id="enquiry-email-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="enquiry-phone">Phone number <span class="optional">(optional)</span></label>
+          <input id="enquiry-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="\+?[0-9\s.\x2d]{7,20}" title="Enter 7 to 20 digits, spaces, dots or hyphens; an initial plus is allowed." aria-describedby="enquiry-phone-hint enquiry-phone-error">
+          <small class="field-hint" id="enquiry-phone-hint">Use 7–20 digits; spaces, an initial +, dots and hyphens are allowed.</small>
+          <small class="field-error" id="enquiry-phone-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="enquiry-category">Enquiry category <span aria-hidden="true">*</span></label>
+          <select id="enquiry-category" name="category" required aria-describedby="enquiry-category-error">
+            <option value="" selected disabled>Select a category</option>
+            <option value="Service information">Service information</option>
+            <option value="Donating goods">Donating goods</option>
+            <option value="Volunteering">Volunteering</option>
+            <option value="Other">Other</option>
+          </select>
+          <small class="field-error" id="enquiry-category-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="enquiry-message">Enquiry details <span aria-hidden="true">*</span></label>
+          <textarea id="enquiry-message" name="message" rows="6" minlength="15" maxlength="2000" required aria-describedby="enquiry-message-hint enquiry-message-error"></textarea>
+          <small class="field-hint" id="enquiry-message-hint">Enter 15 to 2,000 characters.</small>
+          <small class="field-error" id="enquiry-message-error"></small>
+        </div>
+        <button class="form-submit" type="submit">Prepare enquiry</button>
+      </fieldset>
+      <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+      <section class="prepared-message" data-prepared-message hidden>
+        <h2>Your enquiry is ready to copy</h2>
+        <p>This text has not been sent. Copy it into your email app and send it to a verified recipient.</p>
+        <label for="enquiry-prepared-text">Prepared email text</label>
+        <textarea id="enquiry-prepared-text" data-prepared-text rows="10" readonly></textarea>
+        <button class="copy-message" type="button" data-copy-message>Copy message</button>
+        <p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
+      </section>
     </form>
+    <noscript><p class="form-notice">JavaScript is required to prepare a copyable message. The form will not send information without a configured service.</p></noscript>
   </main>
-  <footer class="site-footer">HopeHands Foundation | South Africa</footer>
+  <footer class="site-footer">HopeHands Foundation | Coursework project</footer>
 </body>
 </html>

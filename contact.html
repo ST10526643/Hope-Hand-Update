@@ -3,20 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact the HopeHands Foundation project by preparing a message about services, donating goods, volunteering or another topic.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Contact HopeHands Foundation">
+  <meta property="og:description" content="Prepare a message for HopeHands Foundation about services, donating goods, volunteering or another topic.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Contact | HopeHands Foundation</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><span>HopeHands</span> Foundation</a>
-    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="enquiry.html">Enquiry</a><a href="contact.html" aria-current="page">Contact</a></nav>
+    <div>
+      <a class="brand" href="index.html"><span>HopeHands</span> Foundation</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-toggle-label">Menu</span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
   </header>
-  <main class="page-content contact-content">
+  <main class="page-content contact-content" id="main-content">
     <h1>Contact Us</h1>
-    <p>Phone: +27 (0)21 555 0184</p>
-    <h2>Our locations</h2><p>Cape Town, Johannesburg and Gqeberha</p>
-    <p>For a sponsor message, please use our <a href="enquiry.html">enquiry page</a>.</p>
+    <p>The project is described as fictional and no verified public email address or physical service location has been provided. Use this form to prepare a message; it will not be delivered by the website.</p>
+    <p>For questions about a listed service, donating goods or volunteering, you can also use the <a href="enquiry.html">enquiry form</a>.</p>
+    <form class="message-form" data-message-form data-form-name="HopeHands contact message" novalidate>
+      <fieldset class="form-fields" data-form-fields disabled>
+        <legend>Contact details</legend>
+        <div class="field-group">
+          <label for="contact-name">Name <span aria-hidden="true">*</span></label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" required aria-describedby="contact-name-error">
+          <small class="field-error" id="contact-name-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="contact-email">Email address <span aria-hidden="true">*</span></label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="contact-email-error">
+          <small class="field-error" id="contact-email-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="contact-type">Message type <span aria-hidden="true">*</span></label>
+          <select id="contact-type" name="type" required aria-describedby="contact-type-error">
+            <option value="" selected disabled>Select a message type</option>
+            <option value="Service question">Service question</option>
+            <option value="Donating goods">Donating goods</option>
+            <option value="Volunteering">Volunteering</option>
+            <option value="Other">Other</option>
+          </select>
+          <small class="field-error" id="contact-type-error"></small>
+        </div>
+        <div class="field-group">
+          <label for="contact-message">Full message <span aria-hidden="true">*</span></label>
+          <textarea id="contact-message" name="message" rows="6" minlength="15" maxlength="2000" required aria-describedby="contact-message-hint contact-message-error"></textarea>
+          <small class="field-hint" id="contact-message-hint">Enter 15 to 2,000 characters.</small>
+          <small class="field-error" id="contact-message-error"></small>
+        </div>
+        <button class="form-submit" type="submit">Prepare message</button>
+      </fieldset>
+      <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+      <section class="prepared-message" data-prepared-message hidden>
+        <h2>Your message is ready to copy</h2>
+        <p>This text has not been sent. Copy it into your email app and send it to a verified recipient.</p>
+        <label for="contact-prepared-text">Prepared email text</label>
+        <textarea id="contact-prepared-text" data-prepared-text rows="10" readonly></textarea>
+        <button class="copy-message" type="button" data-copy-message>Copy message</button>
+        <p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
+      </section>
+    </form>
+    <noscript><p class="form-notice">JavaScript is required to prepare a copyable message. The form will not send information without a configured service.</p></noscript>
   </main>
-  <footer class="site-footer">HopeHands Foundation | South Africa</footer>
+  <footer class="site-footer">HopeHands Foundation | Coursework project</footer>
 </body>
 </html>

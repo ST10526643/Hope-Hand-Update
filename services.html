@@ -3,23 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore HopeHands Foundation’s food parcel, clothing and education support project for vulnerable communities in South Africa.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Services | HopeHands Foundation">
+  <meta property="og:description" content="Explore food parcel, clothing and education support from HopeHands Foundation.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Services | HopeHands Foundation</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><span>HopeHands</span> Foundation</a>
-    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="about.html">About</a><a href="enquiry.html">Enquiry</a><a href="contact.html">Contact</a></nav>
+    <div>
+      <a class="brand" href="index.html"><span>HopeHands</span> Foundation</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="menu-toggle-label">Menu</span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="about.html">About</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
-  <main class="page-content">
+  <main class="page-content" id="main-content">
     <h1>Our Services</h1>
     <p>HopeHands Foundation provides basic support to people in vulnerable communities.</p>
-    <div class="service-grid">
-      <div class="service-card"><h2>Food parcels</h2><p>We give food parcels to families that need help.</p></div>
-      <div class="service-card"><h2>Clothing</h2><p>We collect and distribute clothing and blankets.</p></div>
-      <div class="service-card"><h2>Education</h2><p>We help young people with learning and basic skills.</p></div>
+    <h2>Support areas</h2>
+    <div class="service-search">
+      <label for="service-filter">Find a service</label>
+      <input id="service-filter" type="search" aria-describedby="service-results" placeholder="Search food, clothing or education">
+      <p id="service-results" class="form-status" aria-live="polite">Showing all 3 services.</p>
     </div>
+    <div class="service-grid" id="service-list">
+      <details class="service-card" data-service>
+        <summary>Food parcels</summary>
+        <p>We give food parcels to families that need help.</p>
+      </details>
+      <details class="service-card" data-service>
+        <summary>Clothing</summary>
+        <p>We collect and distribute clothing and blankets.</p>
+      </details>
+      <details class="service-card" data-service>
+        <summary>Education</summary>
+        <p>We help young people with learning and basic skills.</p>
+      </details>
+    </div>
+    <p class="page-cta">Have a question or want to support this work? <a href="enquiry.html">Send an enquiry</a>.</p>
   </main>
-  <footer class="site-footer">HopeHands Foundation | South Africa</footer>
+  <footer class="site-footer">HopeHands Foundation | Coursework project</footer>
 </body>
 </html>

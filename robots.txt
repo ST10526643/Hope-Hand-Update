@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Add a Sitemap directive with the production HTTPS URL after replacing the example domain in sitemap.xml.
