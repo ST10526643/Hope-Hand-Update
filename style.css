@@ -1,0 +1,66 @@
+/* Shared foundation styles for every HopeHands Foundation page. */
+:root {
+  --forest: #315640;
+  --forest-dark: #244333;
+  --sage: #5d8b62;
+  --orange: #b36f35;
+  --cream: #f7f8f3;
+  --line: #dfe7df;
+  --text-muted: #587263;
+  --white: #ffffff;
+  --shadow: 0 12px 30px rgba(49, 86, 64, 0.08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; background: var(--cream); color: var(--forest); font-family: Georgia, "Times New Roman", serif; line-height: 1.65; }
+header { border-bottom: 1px solid var(--line); background: var(--white); }
+.site-header { padding: 1.25rem 1.5rem; text-align: center; }
+.brand { display: inline-block; color: var(--forest); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 2vw, 1.8rem); font-weight: 700; letter-spacing: 0.01em; text-decoration: none; }
+.brand span { color: var(--orange); }
+.site-nav { display: flex; justify-content: center; gap: 0.35rem; margin-top: 0.9rem; }
+.site-nav a { padding: 0.4rem 0.7rem; border-radius: 4px; color: var(--forest); font-family: Arial, Helvetica, sans-serif; font-size: 0.875rem; text-decoration: none; transition: background-color 160ms ease, color 160ms ease; }
+.site-nav a:hover, .site-nav a:focus-visible, .site-nav a[aria-current="page"] { background: var(--forest); color: var(--white); }
+main { min-height: calc(100vh - 170px); }
+.page-content, .hero-inner { width: min(100% - 3rem, 850px); margin: 0 auto; padding: 4.5rem 0; }
+.narrow-content { width: min(100% - 3rem, 650px); }
+.contact-content { width: min(100% - 3rem, 700px); }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 1rem; color: var(--forest-dark); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+h2 { margin: 2rem 0 0.65rem; color: var(--sage); font-size: 1.35rem; line-height: 1.25; }
+p { max-width: 68ch; }
+img { display: block; max-width: 100%; height: auto; }
+.content-image { width: 100%; max-width: 650px; height: 260px; margin: 2rem 0; border-radius: 6px; object-fit: cover; box-shadow: var(--shadow); }
+.hero { background: linear-gradient(135deg, #f7f8f3 0%, #edf3ec 100%); }
+.hero-inner { padding-top: 5rem; padding-bottom: 5rem; text-align: center; }
+.eyebrow { margin-bottom: 0.75rem; color: var(--orange); font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.hero h1 { max-width: 700px; margin-right: auto; margin-left: auto; font-size: clamp(2.3rem, 6vw, 4rem); }
+.hero-image { width: 100%; max-height: 360px; margin: 2.5rem auto 0; border-radius: 6px; object-fit: cover; box-shadow: var(--shadow); }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2rem; }
+.service-card { min-height: 190px; padding: 1.5rem; border: 1px solid var(--line); border-top: 4px solid var(--sage); border-radius: 6px; background: var(--white); box-shadow: var(--shadow); transition: transform 160ms ease, box-shadow 160ms ease; }
+.service-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(49, 86, 64, 0.13); }
+.service-card h2 { margin-top: 0; color: var(--forest-dark); font-size: 1.2rem; }
+.site-footer { padding: 1.75rem 1.5rem; border-top: 1px solid var(--line); background: var(--white); color: var(--text-muted); font-family: Arial, Helvetica, sans-serif; font-size: 0.82rem; text-align: center; }
+a { color: var(--orange); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(179, 111, 53, 0.35); outline-offset: 2px; }
+.enquiry-form { padding: 1.5rem; border: 1px solid var(--line); border-radius: 6px; background: var(--white); box-shadow: var(--shadow); }
+.enquiry-form label { display: block; margin-bottom: 0.35rem; font-family: Arial, Helvetica, sans-serif; font-size: 0.9rem; font-weight: 700; }
+.enquiry-form input, .enquiry-form select, .enquiry-form textarea { width: 100%; margin-bottom: 1.15rem; padding: 0.75rem; border: 1px solid #b9c9bb; border-radius: 4px; background: #fcfdfb; color: var(--forest-dark); font: inherit; }
+.enquiry-form textarea { resize: vertical; }
+.enquiry-form button { padding: 0.75rem 1.2rem; border: 0; border-radius: 4px; background: var(--sage); color: var(--white); cursor: pointer; font-family: Arial, Helvetica, sans-serif; font-weight: 700; transition: background-color 160ms ease, transform 160ms ease; }
+.enquiry-form button:hover, .enquiry-form button:focus-visible { background: var(--forest); transform: translateY(-1px); }
+
+@media (max-width: 1199px) {
+  .page-content, .hero-inner, .narrow-content, .contact-content { width: min(100% - 2.5rem, 850px); }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .site-header { padding: 1rem; }
+  .site-nav { flex-wrap: wrap; gap: 0.15rem; }
+  .site-nav a { padding: 0.35rem 0.5rem; font-size: 0.8rem; }
+  .page-content, .hero-inner, .narrow-content, .contact-content { width: min(100% - 2rem, 650px); padding-top: 3rem; padding-bottom: 3rem; }
+  .hero-inner { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .service-grid { grid-template-columns: 1fr; }
+  .content-image { height: 210px; }
+}
